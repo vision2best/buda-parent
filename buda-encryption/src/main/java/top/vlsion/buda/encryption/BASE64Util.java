@@ -1,9 +1,7 @@
 package top.vlsion.buda.encryption;
 
-import sun.misc.BASE64Decoder;
-import sun.misc.BASE64Encoder;
+import org.apache.commons.codec.binary.Base64;
 
-import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
 /**
@@ -37,7 +35,7 @@ public class BASE64Util {
         if (null == input) {
             throw new IllegalArgumentException("input can not be null or empty");
         }
-        return new BASE64Encoder().encodeBuffer(input);
+        return Base64.encodeBase64String(input);
     }
 
     /**
@@ -48,12 +46,7 @@ public class BASE64Util {
         if (null == input || "".equals(input)) {
             throw new IllegalArgumentException("input can not be null or empty");
         }
-        try {
-            return new String(new BASE64Decoder().decodeBuffer(input));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
+        return new String(Base64.decodeBase64(input.getBytes(StandardCharsets.UTF_8)));
     }
 
     public static void main(String[] args) {

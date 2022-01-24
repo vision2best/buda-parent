@@ -1,6 +1,7 @@
 package top.vlsion.buda.encryption;
 
-import sun.misc.BASE64Decoder;
+
+import org.apache.commons.codec.binary.Base64;
 
 import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
@@ -36,7 +37,7 @@ public class DESUtil {
             SecretKey secretKey = des.generateSecret(desKeySpec);
             Cipher cipher = Cipher.getInstance(PADDING);
             cipher.init(Cipher.ENCRYPT_MODE, secretKey);
-            return BASE64Util.encrypt(cipher.doFinal(input.getBytes()));
+            return Base64.encodeBase64String(cipher.doFinal(input.getBytes(StandardCharsets.UTF_8)));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -61,11 +62,17 @@ public class DESUtil {
             SecretKey secretKey = des.generateSecret(desKeySpec);
             Cipher cipher = Cipher.getInstance(PADDING);
             cipher.init(Cipher.DECRYPT_MODE, secretKey);
-            return new String(cipher.doFinal(new BASE64Decoder().decodeBuffer(input)));
+            return new String(cipher.doFinal(Base64.decodeBase64(input.getBytes(StandardCharsets.UTF_8))));
         } catch (Exception e) {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public static void main(String[] args) {
+        String encrypt = encrypt("123", "12345678");
+        System.out.println(encrypt);
+        System.out.println(decrypt(encrypt,"12345678"));
     }
 
 }

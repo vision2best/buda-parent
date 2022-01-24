@@ -27,6 +27,7 @@
         <fastjson.version>1.2.72</fastjson.version>
         <lombok.version>1.16.20</lombok.version>
         <common.lang3.version>3.6</common.lang3.version>
+        <common.codec.version>1.15</common.codec.version>
         <netty.version>4.1.50.Final</netty.version>
         <guava.version>28.2-jre</guava.version>
         <buda.common.version>1.0-SNAPSHOT</buda.common.version>
@@ -51,6 +52,13 @@
                 <artifactId>commons-lang3</artifactId>
                 <version>${common.lang3.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>commons-codec</groupId>
+                <artifactId>commons-codec</artifactId>
+                <version>${common.codec.version}</version>
+            </dependency>
+
 
             <dependency>
                 <groupId>com.google.guava</groupId>
