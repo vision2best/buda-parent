@@ -1,4 +1,4 @@
-package top.vlsion.buda.encryption;
+package top.vlsion.buda.encryption.utils;
 
 import java.math.BigInteger;
 import java.security.MessageDigest;

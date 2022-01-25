@@ -1,4 +1,4 @@
-package top.vlsion.buda.encryption;
+package top.vlsion.buda.encryption.utils;
 
 
 import org.apache.commons.codec.binary.Base64;

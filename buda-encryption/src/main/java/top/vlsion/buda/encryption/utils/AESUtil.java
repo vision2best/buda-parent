@@ -1,4 +1,4 @@
-package top.vlsion.buda.encryption;
+package top.vlsion.buda.encryption.utils;
 
 import sun.misc.BASE64Decoder;
 
@@ -61,4 +61,11 @@ public class AESUtil {
         return null;
     }
 
+
+    public static void main(String[] args) {
+        String encrypt = encrypt("{\"data\":\"code\"}", "0123456789abcdef");
+        System.out.println(encrypt);
+        String decrypt = decrypt("T9hLs/Wsa2WnaXW4JvAUZXeflkB3bxvBaIpvvgQ081Y=", "0123456789abcdef");
+        System.out.println(decrypt);
+    }
 }
