@@ -32,7 +32,7 @@ import java.nio.charset.StandardCharsets;
 @Conditional(value = {EnableEncryptionCondition.class})
 public class BudaDecryptionRequestBodyAdvice implements RequestBodyAdvice {
 
-    @Value("${buda.encrypt.secret:}")
+    @Value("${buda.decrypt.secret:}")
     private String secret;
 
     @Override

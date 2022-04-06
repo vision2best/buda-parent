@@ -1,15 +1,12 @@
 package top.vlsion.buda.encryption.advice;
 
-import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Conditional;
 import org.springframework.core.MethodParameter;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.server.ServerHttpRequest;
 import org.springframework.http.server.ServerHttpResponse;
-import org.springframework.util.StreamUtils;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
@@ -18,8 +15,6 @@ import top.vlsion.buda.encryption.condition.EnableEncryptionCondition;
 import top.vlsion.buda.encryption.type.EncryptionTypeEnum;
 import top.vlsion.buda.encryption.utils.AESUtil;
 import top.vlsion.buda.encryption.utils.DESUtil;
-
-import java.nio.charset.StandardCharsets;
 
 /**
  * 后置加密处理逻辑
@@ -31,7 +26,7 @@ import java.nio.charset.StandardCharsets;
 @Conditional(value = {EnableEncryptionCondition.class})
 public class BudaEncryptionResponseBodyAdvice implements ResponseBodyAdvice {
 
-    @Value("${buda.decrypt.secret:}")
+    @Value("${buda.encrypt.secret:}")
     private String secret;
 
     @Override

@@ -21,6 +21,7 @@
         <module>buda-common</module>
         <module>buda-log</module>
         <module>buda-rule</module>
+        <module>buda-client</module>
     </modules>
 
     <properties>

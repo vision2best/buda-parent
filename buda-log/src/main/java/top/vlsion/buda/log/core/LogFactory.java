@@ -2,7 +2,6 @@ package top.vlsion.buda.log.core;
 
 import top.vlsion.buda.log.adaptors.commons.JakartaCommonsLoggingImpl;
 import top.vlsion.buda.log.adaptors.jdk14.Jdk14LogImpl;
-import top.vlsion.buda.log.adaptors.log4j.Log4jImpl;
 import top.vlsion.buda.log.adaptors.log4j2.Log4j2Impl;
 import top.vlsion.buda.log.adaptors.slf4j.Slf4jImpl;
 import top.vlsion.buda.log.exception.LogRuntimeException;
@@ -23,7 +22,6 @@ public class LogFactory {
     static {
         useSlf4jLogging();
         useLog4J2Logging();
-        useLog4JLogging();
         useCommonsLogging();
         useJdkLogging();
     }
@@ -33,10 +31,6 @@ public class LogFactory {
 
     private static void useSlf4jLogging() {
         setImplementation(Slf4jImpl.class);
-    }
-
-    private static void useLog4JLogging() {
-        setImplementation(Log4jImpl.class);
     }
 
     private static void useLog4J2Logging() {
@@ -55,7 +49,7 @@ public class LogFactory {
         return getLog(aClass.getName());
     }
 
-    private static Log getLog(String logger) {
+    private  static Log getLog(String logger) {
         try {
             return logConstructor.newInstance(logger);
         } catch (Exception e) {

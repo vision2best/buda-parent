@@ -12,9 +12,10 @@ import top.vlsion.buda.log.util.LogUtil;
  * @date : 2022-03-09 15:14
  */
 public class Log4j2LoggerImpl implements Log {
-    private static Marker MARKER = MarkerManager.getMarker(LogFactory.MARKER);
 
-    private Logger log;
+    private static final Marker MARKER = MarkerManager.getMarker(LogFactory.MARKER);
+
+    private final Logger log;
 
     public Log4j2LoggerImpl(Logger logger) {
         log = logger;

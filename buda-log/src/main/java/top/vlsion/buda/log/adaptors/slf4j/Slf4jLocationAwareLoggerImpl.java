@@ -17,7 +17,7 @@ public class Slf4jLocationAwareLoggerImpl implements Log {
 
     private static final String FQCN = Slf4jImpl.class.getName();
 
-    private LocationAwareLogger logger;
+    private final LocationAwareLogger logger;
 
     Slf4jLocationAwareLoggerImpl(LocationAwareLogger logger) {
         this.logger = logger;

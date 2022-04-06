@@ -11,7 +11,7 @@ import top.vlsion.buda.log.util.LogUtil;
  */
 public class JakartaCommonsLoggingImpl implements top.vlsion.buda.log.core.Log {
 
-    private Log log;
+    private final Log log;
 
     public JakartaCommonsLoggingImpl(String clazz) {
         log = LogFactory.getLog(clazz);

@@ -10,7 +10,8 @@ import top.vlsion.buda.log.core.Log;
  * @date : 2022-03-09 15:13
  */
 public class Log4j2Impl implements Log {
-    private Log log;
+
+    private final Log log;
 
     public Log4j2Impl(String clazz) {
         Logger logger = LogManager.getLogger(clazz);

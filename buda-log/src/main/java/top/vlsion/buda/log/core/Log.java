@@ -173,5 +173,4 @@ public interface Log {
      * @param params 可变参数
      */
     void info(String s, Object... params);
-
 }

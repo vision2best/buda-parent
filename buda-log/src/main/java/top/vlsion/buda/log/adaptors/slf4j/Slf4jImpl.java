@@ -12,6 +12,7 @@ import top.vlsion.buda.log.util.LogUtil;
  * @date : 2022-03-09 15:48
  */
 public class Slf4jImpl implements Log {
+
     private Log log;
 
     public Slf4jImpl(String clazz) {

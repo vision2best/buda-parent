@@ -43,7 +43,7 @@ public class MD5Util {
      * @return 加盐 32位 小写
      */
     public static String encrypt32Lower(String input, String slat) {
-        if (null == input || "".equals(input) || null == slat || slat.equals("")) {
+        if (null == input || "".equals(input) || null == slat || "".equals(slat)) {
             throw new IllegalArgumentException("input or slat can not be null or empty");
         }
         String result = null;

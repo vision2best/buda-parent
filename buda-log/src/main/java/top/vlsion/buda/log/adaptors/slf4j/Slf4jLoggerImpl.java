@@ -11,7 +11,7 @@ import top.vlsion.buda.log.util.LogUtil;
  */
 public class Slf4jLoggerImpl implements Log {
 
-    private Logger log;
+    private final Logger log;
 
     public Slf4jLoggerImpl(Logger logger) {
         log = logger;

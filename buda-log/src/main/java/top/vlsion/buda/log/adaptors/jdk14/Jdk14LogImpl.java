@@ -12,7 +12,8 @@ import java.util.logging.Logger;
  * @date : 2022-03-09 13:47
  */
 public class Jdk14LogImpl implements Log {
-    private Logger log;
+
+    private final Logger log;
 
     public Jdk14LogImpl(String clazz) {
         this.log = Logger.getLogger(clazz);
